@@ -1,0 +1,33 @@
+/* custom font import from google font*/
+
+/* variables 
+inside :root we create global variables
+*/
+:root{
+    --painting: #f3f0ee;
+    --white: #f5f3f3;
+}
+
+/* base styles 
+* means apply these rules to every elements
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--painting);
+}
+
+body {
+    background-color: var(--painting);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    position: fixed;
+    font-size: 20px;
+    z-index: 12;
+}
