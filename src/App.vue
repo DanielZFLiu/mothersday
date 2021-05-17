@@ -8,13 +8,15 @@
     <img class="background" id="background6" src="..\src\assets\油墨画6.png" alt="">
     <img class="background" id="background7" src="..\src\assets\油墨画7.png" alt="">
     <img class="background" id="background8" src="..\src\assets\油墨画8.png" alt="">
-    <img class="background" id="boat" src="..\src\assets\小舟.png" alt="">
-    <p>每人出生就是画手，负责画出自己或幸福或平淡或悲惨的一生。
+    <img class="background" id="boat" src="@\assets\小舟.png" alt="">
+    <span class="paragraph" id="msg">{{message}}</span>
+    <!-- <div class="click"></div> -->
+    <!-- <p class="paragraph">每人出生就是画手，负责画出自己或幸福或平淡或悲惨的一生。
       如果这么想的话，母亲一定就是我们画画的老师。
       以刘子枫、刘诗秋为名的画卷上，初始的部分是精细入微的画，
-      洋溢着饱满又温暖的颜色。</p>
+      洋溢着饱满又温暖的颜色。</p> -->
     
-    <!-- <p>妈，非常感谢您让我们有一个幸福的童年。接下来的就要我们单独去画了；
+    <!-- <p>妈，非常感谢您。接下来的就要我们尽可能单独去画了；
       但向您保证，我们会画出精彩的作品来。</p> -->
 
     <!-- <p>洗衣做饭忙不完，每日忙率不着闲，
@@ -24,6 +26,82 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+export default{
+  data(){
+    return{
+      message: "",
+      // msg1: "每人出生就是画手，负责画出自己或幸福或平淡或悲惨的一生。\
+      // 如果这么想的话，母亲一定就是我们画画的老师。\
+      // 以刘子枫、刘诗秋为名的画卷上，初始的部分是精细入微的画，\
+      // 洋溢着饱满又温暖的颜色。",
+      // i: 0
+    }
+  },
+  methods: {
+
+  },
+  mounted() {
+    // document.getElementById("boat").src = "..\\src\\assets\\小舟.png";
+    setTimeout(() => {
+      document.getElementById("boat").src = require('@/assets/小舟2.png');
+    }, 20500);
+
+    setTimeout(() => {
+      document.getElementById("boat").src = require('@/assets/小舟3.png');
+    }, 23500);
+
+    setTimeout(() => {
+      document.getElementById("boat").src = require('@/assets/小舟4.png');
+    }, 26500);
+
+    setTimeout(() => {
+      document.getElementById("boat").src = require('@/assets/小舟5.png');
+    }, 29000);
+
+    setTimeout(() => {
+      this.message = "";
+      var msg2 = "妈，非常感谢您。接下来的就要我们尽可能单独去画了；\
+但向您保证，我们会画出精彩的作品来。".split("");
+      msg2.forEach((word, i) => {
+        setTimeout(() => {
+          this.message += word;
+        }, i * 150); 
+      });
+    }, 30000);
+
+    setTimeout(() => {
+      this.message = "";
+      document.getElementById("msg").style = "white-space: pre";
+      var msg3 = "   洗衣做饭忙不完，每日忙率不着闲，\n\
+   历经风霜添白发，勤劳持家不知烦，\n\
+   尝尽苦辣皆为甜，养大子女无怨言。\n\
+   祝福您健康长寿，愿生活中最美好\n   的幸福永远属于您。".split("");
+      msg3.forEach((word, i) => {
+        setTimeout(() => {
+          this.message += word;
+        }, i * 150); 
+      });
+    }, 38000);
+
+    setTimeout(() => {
+      var msg1 = "每人出生就是画手，负责画出自己或幸福或平淡或悲惨的一生。\
+如果这么想的话，母亲一定就是我们画画的老师。\
+以刘子枫、刘诗秋为名的画卷上，初始的部分是精细入微的画，\
+洋溢着饱满又温暖的颜色。".split("");
+      //forEach() always returns the value undefined,
+      // and thus each "loop" will wait for the inside function to execute
+      // before the next "loop"
+      msg1.forEach((word, i) => {
+        setTimeout(() => {
+          this.message += word;
+        }, i * 150); 
+      });
+    }, 4000);
+  }
+}
+</script>
 
 <style>
   .content {
@@ -172,7 +250,29 @@
     animation-fill-mode: forwards;
   }
 
-  #boat{
-    z-index: 9;
+  @keyframes rowing {
+    0% {left: -10%; opacity: 0%;}
+    10% {left: -10%; opacity: 100%;}
+    100% {left: 10%; opacity: 100%;}
   }
+
+  #boat{
+    opacity: 0%;
+    z-index: 9;
+    animation-name: rowing;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-delay: 18000ms;
+    animation-timing-function: linear;
+  }
+
+  /* .click{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 100;
+  } */
 </style>

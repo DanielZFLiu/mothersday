@@ -1,11 +1,16 @@
 /* custom font import from google font*/
-
+@font-face {
+    font-family: '锐字云字库行楷繁';
+    src: url('锐字云字库行楷繁.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* variables 
 inside :root we create global variables
 */
 :root{
     --painting: #f3f0ee;
-    --white: #f5f3f3;
+    --gray: #4d4d4d;
 }
 
 /* base styles 
@@ -15,7 +20,7 @@ inside :root we create global variables
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    color: var(--painting);
+    color: var(--gray);
 }
 
 body {
@@ -26,8 +31,14 @@ a {
     text-decoration: none;
 }
 
-p {
-    position: fixed;
-    font-size: 20px;
-    z-index: 12;
+span {
+    display: inline-block; 
+    position: relative;
+    font-size: 29px;
+    z-index: 9;
+    font-family: 锐字云字库行楷繁;
+    width: 30%;
+    padding-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
 }
